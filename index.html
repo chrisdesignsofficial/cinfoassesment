@@ -1,33 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
     <title>Cinfoassessment</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/jquery.min.js"></script>
-</head>
-<body>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Datatable -->
+    <link rel="stylesheet" href="./css/datatables.min.css">
     
-    <p id="para"> Check If Its Working </p>
-    <button class="btn btn-success"> Click Me </button>
+    <!-- Boostrap  -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
 
-    <input type="text" name="text" id="text">
+    <!-- JQuerry -->
+    <script src="./js/jquery.min.js"></script>
+  </head>
 
-    <div class="test">
-    </div>
+  <body class="">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <div class="container-fluid">
+        <img src="./img/logo.png" class="img-fluid bg-white p-1 rounded-circle" width="45" alt="" />
+        <a class="navbar-brand text-white mx-1 h1 mb-0 fw-bolder" href="#">INEC</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Pin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
 
-    <ul class="list">
-        <li>Man</li>
-        <li>Man</li>
-        <li>Man</li>
-        <li>Man</li>
-        <li>Man</li>
-    </ul>
-   
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="./js/script.js"></script>
-</body>
+    <!-- Creating the Navtab -->
+    <main class="container">
+      <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <!-- form button -->
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Register</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <!-- table button -->
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Data</button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content mx-auto" id="pills-tabContent">
+        <!-- Form Tab -->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="container">
+            <h1 class="fw-bold text-success text-center mb-3">INEC REGISTRATION FORM</h1>
+            <form class="row g-3" id="form">
+              <!-- First Name -->
+              <div class="col-md-4">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Input your first name" />
+              </div>
+
+              <!-- Middle Name -->
+              <div class="col-md-4">
+                <label for="middlename" class="form-label">Middle Name</label>
+                <input type="text" name="middlename" class="form-control" id="middlename" placeholder="Input your middle name" />
+              </div>
+
+              <!-- Last Name -->
+              <div class="col-md-4">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Input your last name" />
+              </div>
+
+              <!-- Date Of Birth -->
+              <div class="col-md-4">
+                <label for="dob" class="form-label">Date Of Birth</label>
+                <input type="date" name="dob" class="form-control" id="dob" />
+              </div>
+
+              <!-- Sex -->
+              <div class="col-md-4">
+                <label for="sex" class="form-label">Sex</label>
+                <select id="sex" class="form-select" name="sex" required>
+                  <option value="">Choose...</optio>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="col-md-4">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phone" name="phone" />
+              </div>
+
+              <!-- Country -->
+              <div class="col-md-4">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="country" value="Nigeria" readonly placeholder="1234 Main St" />
+              </div>
+
+              <!-- State -->
+              <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select id="state" class="form-select" name="state" required>
+                  <option value="">Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+
+              <!-- LGA -->
+              <div class="col-md-4">
+                <label for="lga" class="form-label">L.G.A</label>
+                <select id="lga" class="form-select" name="lga">
+                  <option value="">Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" />
+                  <label class="form-check-label" for="gridCheck"> Click to accept terms and condition </label> <br>
+                  <em style="font-size: 13px;" class="text-danger"> You must ensure that your details are accurate. Fraudulent details will have legal consequences</em>
+                </div>
+              </div>
+              <div class="col-12 mb-3">
+                <button type="submit" class="btn btn-success text-light">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div><!-- End of Form Tab -->
+
+        <!-- Data Tab -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="table-responsive dataTables_wrapper">
+            <table id="table_id" class="display text-center">
+              
+              <!-- Table Header -->
+              <thead class="text-center">
+                <tr>
+                  <th scope="col" class="pb-3">
+                    <input class="form-check-input p-2" type="checkbox" value="" id="flexCheckDefault">
+                  </th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">First Name</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Middle Name</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Last Name</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">D.O.B</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Sex</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Phone</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Country</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">State</th>
+                  <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">LGA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1st row -->
+                <tr class="border-bottom">
+                  <th scope="row">
+                    <input class="form-check-input ms-2 p-2" type="checkbox" value="" id="flexCheckDefault">
+                  </th>
+                  <td class="fs-6" id="firstNameInput">First</td>
+                  <td class="fs-6"id="middleNameInput">Middle</td>
+                  <td class="fs-6" id="lastNameInput">Last</td>
+                  <td class="fs-6" id="dobInput">DOB</td>
+                  <td class="fs-6" id="sexInput">Sex</td>
+                  <td class="fs-6" id="phoneInput">Phone</td>
+                  <td class="fs-6" id="countryInput">Country</td>
+                  <td class="fs-6" id="stateInput">State</td>
+                  <td class="fs-6" id="lgaInput">L.G.A</td>
+                </tr>
+                <!-- End of Table -->
+              </tbody>
+            </table>
+          </div> <!-- Table Content End-->
+        </div>
+        <!-- End of Data tab -->
+      </div>
+
+      <!-- End of Tabcontent -->
+
+
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="./js/datatables.min.js"></script>
+    <script src="./js/dataTables.responsive.min.js"></script>
+
+    <script src="./js/script.js"></script>
+  </body>
 </html>

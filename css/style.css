@@ -1,8 +1,18 @@
-.avatar {
-    border-radius: 50%;
-    position: relative;
-    left: 100px;
-    z-index: 1;
-    margin-left: -15px;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
 }
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important
+}
+
+
+.error{
+    color:red;
+    font-size: small;
+}
+
+
 
