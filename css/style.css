@@ -14,5 +14,20 @@ body{
     font-size: small;
 }
 
+.tablink{
+    color: #198754;
+    background-color: white;
+    cursor: pointer;
+}
+
+.tablink:focus{
+    border-color: lightgreen;
+}
+
+.tablink:active{
+    background-color: #198754;
+    color: white; 
+}
+
 
 
